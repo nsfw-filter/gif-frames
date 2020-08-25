@@ -1,6 +1,6 @@
 {
   "name": "@nsfw-filter/gif-frames",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Pure JavaScript tool for extracting GIF frames and saving to file",
   "main": "gif-frames.js",
   "types": "gif-frames.d.ts",

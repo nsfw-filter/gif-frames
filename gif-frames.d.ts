@@ -1,6 +1,6 @@
 import {Initializer} from "multi-integer-range";
 
-declare module "gif-frames" {
+declare module "@nsfw-filter/gif-frames" {
 
     export default function gifFrames<T extends GifFrameOptions>(options: T): Promise<GifFrameData<T>[]>;
     export default function gifFrames<T extends GifFrameOptions>(options: T, callback: (err: Error, frameData: GifFrameData<T>[]) => void): void;
@@ -22,8 +22,8 @@ declare module "gif-frames" {
         frameInfo: GifFrameInfo;
     }
 
-    interface GifFrameReadableStream {
-        getImage(): {data: ReadableStream, width: number, height: number};
+    interface GifFrameBuffer {
+        getImage(): ImageData;
         frameIndex: number;
         frameInfo: GifFrameInfo;
     }
