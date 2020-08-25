@@ -1,6 +1,4 @@
 import {Initializer} from "multi-integer-range";
-import {Canvas} from "canvas";
-import stream from "stream";
 
 declare module "gif-frames" {
 
@@ -11,7 +9,7 @@ declare module "gif-frames" {
     type GifFrameData<T extends GifFrameOptions> = T["outputType"] extends "canvas" ? GifFrameCanvas : GifFrameReadableStream;
 
     interface GifFrameOptions {
-        url: string | Buffer;
+        url: string | ArrayBuffer;
         frames: "all" | Initializer;
         outputType?: GifOutputType;
         quality?: number;
@@ -19,15 +17,15 @@ declare module "gif-frames" {
     }
 
     interface GifFrameCanvas {
-        getImage(): Canvas;
+        getImage(): HTMLCanvasElement;
         frameIndex: number;
-        frameInfo: GifFrameInfo
+        frameInfo: GifFrameInfo;
     }
 
     interface GifFrameReadableStream {
-        getImage(): stream.Readable;
+        getImage(): {data: ReadableStream, width: number, height: number};
         frameIndex: number;
-        frameInfo: GifFrameInfo
+        frameInfo: GifFrameInfo;
     }
 
     interface GifFrameInfo {
