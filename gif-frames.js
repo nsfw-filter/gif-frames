@@ -58,7 +58,7 @@ function gifFrames (options, callback) {
 
   // Necessary to check if we're in Node or the browser until this is fixed:
   // https://github.com/scijs/get-pixels/issues/33
-  var inputType = typeof window === 'undefined' ? 'image/gif' : '.GIF';
+  var inputType = typeof window === 'undefined' && typeof importScripts !== 'function' ? 'image/gif' : '.GIF';
   getPixels(url, inputType, function (err, pixels, framesInfo) {
     if (err) {
       reject(err);
