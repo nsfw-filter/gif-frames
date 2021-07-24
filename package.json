@@ -36,7 +36,7 @@
   "homepage": "https://github.com/nsfw-filter/gif-frames#readme",
   "dependencies": {
     "@nsfw-filter/save-pixels": "^2.3.4",
-    "get-pixels-frame-info-update": "3.3.2",
+    "get-pixels-updated": "1.0.0",
     "multi-integer-range": "3.0.0"
   },
   "devDependencies": {
